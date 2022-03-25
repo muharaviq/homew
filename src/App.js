@@ -1,17 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import { multipleData } from "./data";
+import Tracks from "./components/Tracks";
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <div className='container'>
-        <img className='image' src='https://i.scdn.co/image/av67616d00001e02e8b066f70c206551210d902b' alt="bohemian"></img>
-        <p>Bohemian Rhapsody (The Original Soundtrack)</p>
-        <p>Quee</p>
-        <button type='button' onClick="alert('select')">select</button>
+      <div className="container">
+        <Tracks tracks={multipleData} />
       </div>
     </div>
   );
 }
-
-export default App;
