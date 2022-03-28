@@ -1,13 +1,21 @@
-import { multipleData } from "./data";
-import Tracks from "./components/Tracks";
-import "./App.css";
+import Gif from '../src/components/index';
+import data from './data';
 
-export default function App() {
+function App () {
   return (
-    <div className="App">
-      <div className="container">
-        <Tracks tracks={multipleData} />
+    <div className='container'>
+      <h1>Playlist</h1>
+      <div className='track-list'>
+          {data.map((list) => (
+            <Gif
+              key={list.id}
+              url={list.album.images[1].url}
+              nameAlbum={list.name}
+              nameArtist={list.nameArtist[0].name}
+            />
+          ))}
       </div>
     </div>
   );
 }
+  export default App;
